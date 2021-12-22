@@ -59,15 +59,19 @@
             </nav>
       </header>
 	  <main class="container-xl">
-		  <h1 class="text-center mt-4 mb-4 fs-sm-1 fs-4">Add New Student</h1>
+		  <h1 class="text-center mt-4 mb-4 fs-sm-1 fs-4">Edit Student</h1>
 		  <div class="mx-md-auto mx-3 pb-3 border rounded-1 shadow-sm mb-4" style="max-width: 40rem;">
             <div style="background: #008fa0; height: 6rem" class="px-3 d-flex align-items-center mb-3">
                 <h2 class="fs-1" 
                     style="color:white; 
                     font-weight: bold;">SMA Kidsstar <span style="font-size: 1.2rem; font-weight: lighter">Pendaftaran Jenjang SMA 2021</span></h2> 
             </div>
+            <div>
+                <img src="img/<?= $student["image"] ;?>" style="height: 10rem; margin: auto; display: block">
+            </div>
             <div class="px-3">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="image" value="<?= $student["image"]; ?>">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input required name="name" type="text" 
@@ -141,8 +145,12 @@
                         <label for="school_origin" class="form-label">School Origin</label>
                         <input required name="school_origin" type="text" 
                             class="form-control" id="school_origin" 
-                            placeholder="SMAN 1 Kota Bekasi"
+                            placeholder="Hanlim High School"
                             value="<?= $student["school_origin"] ;?>">
+                    </div>
+                    <div class="mb-5">
+                        <label for="image" class="form-label">Edit Image</label>
+                        <input name="image" type="file" class="form-control" id="image" value="">
                     </div>
                     <button type="submit" name="submit" class="btn btn-success" style="width: 100%;">Submit</button>
                 </form>

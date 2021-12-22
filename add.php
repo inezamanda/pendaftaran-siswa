@@ -9,17 +9,18 @@
             echo "
                 <script>
                     alert('data berhasil ditambahkan!');
-                    document.location.href = 'index.php';
+                    document.location.href = './student-list.php';
                 </script>
             ";
         }else{
+            echo mysqli_error($conn);
             echo "
                 <script>
                     alert('data gagal ditambahkan!');
-                    document.location.href = 'index.php';
+                    document.location.href = './student-list.php';
                 </script>
             ";
-            }
+        }
     }
 ?>
 
@@ -59,7 +60,7 @@
                     font-weight: bold;">SMA Kidsstar <span style="font-size: 1.2rem; font-weight: lighter">Pendaftaran Jenjang SMA 2021</span></h2> 
             </div>
             <div class="px-3">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input required name="name" type="text" class="form-control" id="name" placeholder="Inez Yulia Amanda">
@@ -101,6 +102,10 @@
                     <div class="mb-5">
                         <label for="school_origin" class="form-label">School Origin</label>
                         <input required name="school_origin" type="text" class="form-control" id="school_origin" placeholder="SMP Kidsstar">
+                    </div>
+                    <div class="mb-5">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input required name="image" type="file" class="form-control" id="image">
                     </div>
                     <button type="submit" name="submit" class="btn btn-success" style="width: 100%;">Submit</button>
                 </form>

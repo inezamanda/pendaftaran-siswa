@@ -52,6 +52,7 @@
 						<th scope="col">Gender</th>
 						<th scope="col">Religion</th>
 						<th scope="col">School Origin</th>
+						<th scope="col">Image</th>
 						<th scope="col">Action</th>
 					</tr>
 				</thead>
@@ -71,6 +72,9 @@
 							<td><?= $student["gender"] ?></td>
 							<td><?= $student["religion"] ?></td>
 							<td><?= $student["school_origin"] ?></td>
+							<td>
+								<img style="width: 5rem;" src="./img/<?= $student["image"] ?>" alt="<?= $student["name"]?> image">
+							</td>
 							<td >
 								<button type="button" class="btn btn-warning btn-sm btn-lg-lg">
 									<a href="edit.php?id=<?= $student["id"]; ?>" 
